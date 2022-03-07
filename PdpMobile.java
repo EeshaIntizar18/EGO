@@ -13,6 +13,17 @@ public class PdpMobile extends Parent {
 					.click();
 			Thread.sleep(3000);
 
+			String ExpectedURL1 = "https://ego.co.uk/hab478-fiat-lace--square-toe-sculptured-heel-in-black-faux-leather.html";
+			String newUrls = driver.getCurrentUrl();
+			if (newUrls.equalsIgnoreCase(ExpectedURL1)) {
+				System.out.println("Find product,Pass");
+				wr.writeReport("Find product,Passed");
+			} else {
+				System.out.println("Find product,Fail");
+				wr.writeReport("Fiind product,Failed");
+				driver.quit();
+			}
+
 			// Scrolling down
 			js.executeScript("window.scrollBy(0,250)", "");
 			Thread.sleep(1000);
@@ -29,18 +40,19 @@ public class PdpMobile extends Parent {
 			driver.findElement(By.id("product-addtocart-button")).click();
 			Thread.sleep(2000);
 			System.out.println("Pdp for mob,Pass");
-		
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Pdp for mobile,Passed");
+
 		} catch (Exception e) {
 			System.out.println("Pdp page for mobile, Fail");
 			driver.quit();
 			Thread.sleep(1000);
-			
-			//ScreenRecoder
+
+			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-			
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Pdp for mob ,Failed");
 			wr.writeReport("******");
 		}

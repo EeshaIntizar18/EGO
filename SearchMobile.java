@@ -18,20 +18,21 @@ public class SearchMobile extends Parent {
 			// Press ENTER
 			a.sendKeys(Keys.RETURN);
 			Thread.sleep(3000);
-			
+
 			System.out.println("Search for mob,Pass");
-		
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Search for mob,Passed");
+			
 		} catch (Exception e) {
 			System.out.println("Search for mobile,Fail");
 			driver.quit();
 			Thread.sleep(1000);
-			
-			//ScreenRecoder
+
+			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-			
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Search for mob,Failed");
 			wr.writeReport("******");
 		}

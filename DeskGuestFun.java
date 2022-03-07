@@ -2,6 +2,9 @@
 public class DeskGuestFun extends Parent {
 	public void guestDesk() throws Exception {
 		try {
+			// Create instance for ad desk
+			AdCloseDesk ad = new AdCloseDesk();
+			ad.adClose();
 
 			// Create instance for search class
 			SearchDesk s = new SearchDesk();
@@ -56,10 +59,10 @@ public class DeskGuestFun extends Parent {
 			pc.card();
 			Thread.sleep(1000);
 			System.out.println("Guest functions for desk,Passed");
-			
+
 			// Close driver
 			driver.close();
-			
+
 			// Write Report
 			wr.writeReport("Functions for desk,Passed");
 
@@ -69,7 +72,7 @@ public class DeskGuestFun extends Parent {
 		} catch (Exception e) {
 			System.out.println("Functions failed for Desk");
 			Thread.sleep(500);
-			driver.close();
+			driver.quit();
 
 			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();

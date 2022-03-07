@@ -10,7 +10,7 @@ public class WritingReport {
 	String time = dateFormat.format(new Date());
 	String csv = "Report Writing " + time + " .csv";
 	CSVWriter writer;
- 
+
 	public void writeReport(String s) {
 		{
 			try {

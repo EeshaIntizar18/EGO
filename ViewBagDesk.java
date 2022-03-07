@@ -24,10 +24,11 @@ public class ViewBagDesk extends Parent {
 			Thread.sleep(2500);
 
 			// Clicking on checkout button
-			driver.findElement(By.xpath("//span[text()='CHECKOUT SURELY']")).click();
+			driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div/div/div[3]/div[4]/ul/li[1]/button")).click();
 			Thread.sleep(2500);
 			System.out.println("View bag for desk,Pass");
 			wr.writeReport("View Bag for Desk,Passed");
+
 		} catch (Exception e) {
 			System.out.println("View Bag for Desk,Fail");
 			driver.quit();

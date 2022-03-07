@@ -2,6 +2,9 @@
 public class DeskUserFun extends Parent {
 	public static void deskFunctions() throws Exception {
 		try {
+			AdCloseDesk ad=new AdCloseDesk();
+			ad.adClose();
+			
 			// Create instance of login class
 			LoginDesk ln = new LoginDesk();
 			ln.login();

@@ -31,9 +31,9 @@ public class ViewBagMob extends Parent {
 			// Print
 			System.out.println("View Bag for mob,Pass");
 
-
 			// Write report
 			wr.writeReport("View Bag for Mob ,Passed");
+
 		} catch (Exception e) {
 			System.out.println("Cart page,Fail");
 			driver.quit();

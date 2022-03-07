@@ -8,7 +8,7 @@ public class ShipAddressGuestDesk extends Parent {
 			js.executeScript("window.scrollBy(0,-150)", "");
 			Thread.sleep(500);
 
-			//Enter email
+			// Enter email
 			driver.findElement(By.id("customer-email")).sendKeys("usman.ali@rltsquare.com");
 			Thread.sleep(1500);
 			js.executeScript("window.scrollBy(0,200)", "");
@@ -71,7 +71,7 @@ public class ShipAddressGuestDesk extends Parent {
 			Thread.sleep(500);
 			driver.findElement(By
 					.xpath("/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form/div/div[7]/div/input"))
-				 .sendKeys("Manchester");
+					.sendKeys("Manchester");
 
 			// Entering mobile number
 			Thread.sleep(500);
@@ -82,21 +82,22 @@ public class ShipAddressGuestDesk extends Parent {
 
 			// Scrolling down
 			js.executeScript("window.scrollBy(0,450)", "");
-			
+
 			System.out.println("Shipping Address for guest desk,Pass");
-		
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Shipping address for guest desk ,Passed");
+
 		} catch (Exception e) {
 			System.out.println("Shipping address for desk guest,Fail");
 			Thread.sleep(500);
 			driver.quit();
 			Thread.sleep(1000);
-			
-			//ScreenRecoder
+
+			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-			
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Shipping address for desk guest ,Failed");
 			wr.writeReport("******");
 

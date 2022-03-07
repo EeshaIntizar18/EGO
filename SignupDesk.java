@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class SignupDesk extends Parent {
-	static int c;
+	static int value;
 
 	public void signup() throws Exception {
 		try {
@@ -15,17 +15,17 @@ public class SignupDesk extends Parent {
 
 				System.out.println("Sucessful login,no need to create account");
 				Thread.sleep(1000);
-				c = 1;
-				System.out.println("value=" + c);
+				value = 1;
+				System.out.println("value=" + value);
 			} else {
-				System.out.println(c);
+				System.out.println(value);
 				String actual = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div"))
 						.getText();
 				String expected3 = "reCAPTCHA";
 				String expected2 = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
 				String expected = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
-				a = actual.equals(expected) || actual.contains(expected2) || actual.contains(expected3);
-				if (a == true) {
+				compareStrings = actual.equals(expected) || actual.contains(expected2) || actual.contains(expected3);
+				if (compareStrings == true) {
 
 					// Mouse over on account button
 					Thread.sleep(2000);
@@ -77,40 +77,43 @@ public class SignupDesk extends Parent {
 					String actuals = driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div[2]/div/div/div"))
 							.getText();
 					String expected1 = "There is already an account with this email address. If you are sure that it is your email address, ";
-					b = actuals.contains(expected1);
+					String expected22 = "reCAPTCHA";
+					signupdesk = actuals.contains(expected1) || actuals.contains(expected22);
+
 					Thread.sleep(3000);
 
-					if (b == true) {
+					if (signupdesk == true) {
 						System.out.println("Account already exist");
-						driver.get("https://ego.co.uk/");
+						// Writing Report
+						wr.writeReport("Sign Up for Desk ,Failed");
+						wr.writeReport("******");
 					} else {
-						c = 2;
+						value = 2;
 						System.out.println("Account successfuly created");
 						System.out.println(2);
 						Thread.sleep(1000);
+						System.out.println("Signup for desk,Pass");
+						wr.writeReport("Sign Up for Desk ,Passed");
 					}
 				}
 			}
-			System.out.println("Signup for desk,Pass");
-			wr.writeReport("Sign Up for Desk ,Passed");
+
 		} catch (Exception e) {
-			System.out.println("Sign Up for Desk,Fail");
+			System.out.println("Register element not found");
 			driver.quit();
 			Thread.sleep(1000);
-
+			// Writing Report
+			wr.writeReport("Sign Up registered element,Failed");
+			wr.writeReport("******");
 			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-
-			// Writing Report
-			wr.writeReport("Sign Up for Desk ,Failed");
-			wr.writeReport("******");
 		}
 
 	}
 	// Getter
 
 	public int getValue() {
-		return c;
+		return value;
 	}
 
 }

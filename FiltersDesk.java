@@ -32,7 +32,7 @@ public class FiltersDesk extends Parent {
 			is.executeScript("window.scrollBy(0,250)", "");
 			Thread.sleep(2000);
 
-			System.out.println("Filtes for desk,Pass");
+			System.out.println("Filters for desk,Pass");
 			// Write Report
 			wr.writeReport("Filters for desk ,Passed");
 

@@ -76,9 +76,8 @@ public class ShippingAddressGuestMob extends Parent {
 					"/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form/div/div[8]/div/div[1]/input"))
 					.sendKeys("+443222204317");
 			Thread.sleep(500);
-			
+
 			System.out.println("Shipping address for guest mob,Pass");
-			
 
 			// Write report
 			wr.writeReport("Shipping address for guest mob ,Passed");
@@ -87,11 +86,11 @@ public class ShippingAddressGuestMob extends Parent {
 			Thread.sleep(500);
 			driver.quit();
 			Thread.sleep(1000);
-			
-			//ScreenRecoder
+
+			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-			
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Shipping address for guest mob ,Failed");
 			wr.writeReport("******");
 

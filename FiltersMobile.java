@@ -20,7 +20,7 @@ public class FiltersMobile extends Parent {
 			WebElement s1 = driver.findElement(By.xpath(
 					"/html/body/div[2]/main/div[3]/div/div[1]/div[1]/div/div[3]/div[2]/div[1]/div[2]/div/div[2]/div/div[1]/a[3]/div"));
 			s1.click();
-			Thread.sleep(3000);
+			Thread.sleep(4500);
 
 			// Clicking on color filter
 			WebElement c = driver.findElement(By.xpath(
@@ -32,7 +32,7 @@ public class FiltersMobile extends Parent {
 			WebElement c1 = driver.findElement(By.xpath(
 					"/html/body/div[2]/main/div[3]/div/div[1]/div[1]/div/div[3]/div[2]/div[2]/div[2]/ol/li[1]/a"));
 			c1.click();
-			Thread.sleep(3000);
+			Thread.sleep(4500);
 
 			// Clicking on apply filters
 			driver.findElement(By.className("apply-filter-btn")).click();
@@ -43,7 +43,6 @@ public class FiltersMobile extends Parent {
 			// Write Report
 			wr.writeReport("Filters for Mob,Passed");
 
-			
 		} catch (Exception e) {
 			System.out.println("Unsuccessful filters");
 			driver.quit();

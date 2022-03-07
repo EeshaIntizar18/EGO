@@ -67,8 +67,8 @@ public class LoginDesk extends Parent {
 				String expected3 = "reCAPTCHA";
 				String expected2 = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
 				String expected = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
-				a = actual.equals(expected) || actual.contains(expected2) || actual.contains(expected3);
-				if (a == true) {
+				compareStrings = actual.equals(expected) || actual.contains(expected2) || actual.contains(expected3);
+				if (compareStrings == true) {
 					System.out.println("Login for Desk,Fail");
 					Thread.sleep(2000);
 					System.out.println("Account temporarirly disbaled text appeared");

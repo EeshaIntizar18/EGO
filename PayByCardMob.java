@@ -57,26 +57,28 @@ public class PayByCardMob extends Parent {
 			driver.findElement(By.xpath("//input[@classnamemodifiers='large']")).sendKeys("s");
 			driver.findElement(By.xpath("//input[@classnamemodifiers='large']")).sendKeys("t");
 			Thread.sleep(1000);
-			
+
 			System.out.println("Pay by card for mob,Pass");
-			//Write Report
+			// Write Report
 			wr.writeReport("Pay by card ,Passed");
+			
+			System.out.println("Mobile functions,Pass ");
 			
 			// Closing the browser
 			driver.close();
-			
-			//ScreenRecoder
+
+			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-			
+
 		} catch (Exception e) {
 			System.out.println("Unsucessful Pay-by-card");
 			driver.quit();
 			Thread.sleep(1000);
-			
-			//ScreenRecoder
+
+			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-			
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Pay by card ,Failed");
 			wr.writeReport("******");
 		}

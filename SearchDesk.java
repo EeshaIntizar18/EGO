@@ -14,20 +14,20 @@ public class SearchDesk extends Parent {
 			// Press ENTER
 			ar.sendKeys(Keys.RETURN);
 			Thread.sleep(3000);
-			
+
 			System.out.println("Search for desk,Pass");
-			
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Search for desk ,Passed");
 
 		} catch (Exception e) {
 			System.out.println("Search for desk,Fail");
 			driver.quit();
 			Thread.sleep(1000);
-			//ScreenRecoder
+			// ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-			
-			//Write Report
+
+			// Write Report
 			wr.writeReport("Search for Desk ,Failed");
 			wr.writeReport("**********");
 		}

@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 
 public class SignupMobile extends Parent {
-	static int c1 = 0;
+	static int value1 = 0;
 
 	public void signupMobile() throws Exception {
 		try {
@@ -12,8 +12,8 @@ public class SignupMobile extends Parent {
 
 				System.out.println("Sucessful,no need to create account");
 				Thread.sleep(1000);
-				c1 = 1;
-				System.out.println("value" + c1);
+				value1 = 1;
+				System.out.println("value" + value1);
 
 			} else {
 				String actual = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div"))
@@ -21,8 +21,8 @@ public class SignupMobile extends Parent {
 				String expected3 = "reCAPTCHA";
 				String expected2 = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
 				String expected = "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.";
-				a = actual.equals(expected) || actual.contains(expected2) || actual.contains(expected3);
-				if (a == true) {
+				compareStrings = actual.equals(expected) || actual.contains(expected2) || actual.contains(expected3);
+				if (compareStrings == true) {
 					Thread.sleep(500);
 					js.executeScript("window.scrollBy(0,450)", "");
 					Thread.sleep(500);
@@ -62,22 +62,28 @@ public class SignupMobile extends Parent {
 					String actuals = driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div[2]/div/div/div"))
 							.getText();
 					Thread.sleep(500);
+					String expected20 = "reCAPTCHA";
 					String expected1 = "There is already an account with this email address. If you are sure that it is your email address, ";
-					b = actuals.contains(expected1);
+					signupmob = actuals.contains(expected1)|| actuals.contains(expected20);
 					Thread.sleep(1000);
-					if (b == true) {
+					if ( signupmob == true) {
 						System.out.println("Account already exist");
+						// Writing Report
+						wr.writeReport("Sign Up for Mob ,Failed");
+						wr.writeReport("******");
 					} else {
-						c1 = 2;
+						value1 = 2;
 						System.out.println("Account successfuly created");
-						System.out.println(c1);
+						System.out.println(value1);
 						Thread.sleep(1000);
+						System.out.println("Signup for mob,Pass");
+						wr.writeReport("Sign Up for Mob ,Passed");
 					}
 				}
 
 			}
-			System.out.println("Signup for mob,Pass");
-			wr.writeReport("Sign Up for Mob ,Passed");
+			
+			
 		} catch (Exception e) {
 			System.out.println("Signup for mobile,Fail");
 			driver.quit();
@@ -87,14 +93,14 @@ public class SignupMobile extends Parent {
 			ScreenRecorderUtil.stopRecord();
 
 			// Writing Report
-			wr.writeReport("Sign Up for Mob ,Failed");
+			wr.writeReport("Sign Up registered element ,Failed");
 			wr.writeReport("******");
 		}
 	}
 
 	// Getter
 	public int getValues() {
-		return c1;
+		return value1;
 	}
 
 }

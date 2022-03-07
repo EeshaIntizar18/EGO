@@ -3,6 +3,10 @@ public class MobUserFun extends Parent {
 	public void mobileFunctions() throws Exception {
 		try {
 
+			//Create instance for ad mobile
+			AdCloseMob add=new AdCloseMob();
+			add.adClosemob();
+			
 			// Create instance for mobile login
 			LoginMobile lm = new LoginMobile();
 			lm.loginMobile();
@@ -69,16 +73,14 @@ public class MobUserFun extends Parent {
 			PayByCardMob pb = new PayByCardMob();
 			pb.cardMobile();
 			Thread.sleep(500);
-
-			System.out.println("Mobile functions,Pass ");
 			
 			//Close driver
 			driver.close();
 			
 			//ScreenRecoder
 			ScreenRecorderUtil.stopRecord();
-		} catch (Exception e) {
-			System.out.println("Mobile functions,Failed ");
+		} 
+		catch (Exception e) {
 			Thread.sleep(500);
 			driver.quit();
 			Thread.sleep(1000);
