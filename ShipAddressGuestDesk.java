@@ -8,9 +8,12 @@ public class ShipAddressGuestDesk extends Parent {
 			js.executeScript("window.scrollBy(0,-150)", "");
 			Thread.sleep(500);
 
-			// Enter email
+			
+				// Enter email
 			driver.findElement(By.id("customer-email")).sendKeys("usman.ali@rltsquare.com");
 			Thread.sleep(1500);
+
+			// Scroll down
 			js.executeScript("window.scrollBy(0,200)", "");
 
 			// Selecting country drop down
@@ -29,40 +32,40 @@ public class ShipAddressGuestDesk extends Parent {
 
 			// Setting First name
 			Thread.sleep(1000);
-			driver.findElement(By.xpath(
-					"/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form[2]/div/div[2]/div/input"))
+			driver.findElement(By.className(
+					"firstname"))
 					.sendKeys("Test");
 
 			// Setting Last name
 			Thread.sleep(500);
-			driver.findElement(By.xpath(
-					"/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form[2]/div/div[3]/div/input"))
+			driver.findElement(By.className(
+					"lastname"))
 					.sendKeys("Test");
 
 			// Entering post code
 			Thread.sleep(500);
 			driver.findElement(By
-					.xpath("/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form/div/div[4]/div/input"))
+					.className("postcode"))
 					.sendKeys("M32 0JT");
 			Thread.sleep(250);
 			js.executeScript("window.scrollBy(0,50)", "");
 
 			// Entering address line one
 			Thread.sleep(500);
-			driver.findElement(By.xpath(
-					"/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form/div/fieldset/div/div[1]/div/input"))
+			driver.findElement(By.className(
+					"street[0]"))
 					.sendKeys("Unit A1, Thomas Street");
 
 			// Entering address line two
 			Thread.sleep(500);
-			driver.findElement(By.xpath(
-					"/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form/div/fieldset/div/div[2]/div/input"))
+			driver.findElement(By.className(
+					"street[1]"))
 					.sendKeys("Longford Trading Estate Stretford");
 
 			// Entering state
 			Thread.sleep(500);
 			driver.findElement(By
-					.xpath("/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form/div/div[6]/div/input"))
+					.className("region"))
 					.sendKeys("Greater Manchester");
 
 			// Entering city
@@ -70,7 +73,7 @@ public class ShipAddressGuestDesk extends Parent {
 			js.executeScript("window.scrollBy(0,50)", "");
 			Thread.sleep(500);
 			driver.findElement(By
-					.xpath("/html/body/div[3]/main/div[3]/div/div[3]/div[3]/ol/li[1]/div[2]/form/div/div[7]/div/input"))
+					.className("city"))
 					.sendKeys("Manchester");
 
 			// Entering mobile number
