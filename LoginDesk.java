@@ -25,7 +25,7 @@ public class LoginDesk extends Parent {
 			Thread.sleep(1000);
 
 			// Entering email
-			email.sendKeys("usman.ali@rltsquare.com");
+			email.sendKeys("esha.intizar@rltsquare.com");
 			Thread.sleep(1000);
 
 			// Selecting password field
